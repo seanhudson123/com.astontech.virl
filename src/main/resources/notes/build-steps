@@ -1,0 +1,9 @@
+BUILD:
+cd src/main/frontend
+npm run build
+
+cd ../../.. (top level of the project & location of pom.xml)
+mvn clean package
+
+RUN:
+java -jar target/student-1.0.jar
