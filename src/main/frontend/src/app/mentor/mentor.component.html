@@ -1,0 +1,55 @@
+<div class="outer-box">
+
+  <div>
+      <div class="btn-group btn-primary">
+          <button class="btn" (click)='newMenteeModal = true'>Add Mentee</button>
+          <button class="btn" (click)='errorModal = true'>Modal Tester</button>
+      </div>
+
+  </div>
+
+  <clr-datagrid>
+    <clr-dg-column [clrDgField]="'id'">Id</clr-dg-column>
+    <clr-dg-column [clrDgField]="'name'">Mentee Name</clr-dg-column>
+    <clr-dg-column [clrDgField]="'site'">Site</clr-dg-column>
+    <clr-dg-column [clrDgField]="'assignedVirlInstance'">Assigned VIRL Instance</clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let mentee of mentees">
+        <clr-dg-cell>{{mentee.id}}</clr-dg-cell>
+        <clr-dg-cell>{{mentee.name}}</clr-dg-cell>
+        <clr-dg-cell>{{mentee.site}}</clr-dg-cell>
+        <clr-dg-cell>{{mentee.assignedVirlInstance}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>{{mentees.length}} mentees</clr-dg-footer>
+  </clr-datagrid>
+
+</div>
+
+
+<clr-modal  [(clrModalOpen)]="newMenteeModal"
+            [clrModalClosable]="false"
+            [clrModalStaticBackdrop]="false">
+    <h3 class="modal-title">Add New Mentee</h3>
+    <div class="modal-body">
+        <app-mentee-form></app-mentee-form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="newMenteeModal = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="saveMentee()">Save</button>
+    </div>
+</clr-modal>
+
+
+<clr-modal  [(clrModalOpen)]="errorModal"
+            [clrModalSize]="'sm'"
+            [clrModalClosable]="false"
+            [clrModalStaticBackdrop]="false">
+    <h3 class="modal-title">Error</h3>
+    <div class="modal-body">
+        <p>ERROR BODY</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="errorModal = false">Ok</button>
+    </div>
+</clr-modal>
