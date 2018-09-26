@@ -8,7 +8,7 @@ import { Mentee } from '../types/mentee';
 })
 export class MenteeFormComponent {
 
-  model = new Mentee('Bipin Butala', 'MN', 'CISCO');
+  model = new Mentee('Bipin Butala', 'CA', 'DEV');
 
   submitted = false;
 

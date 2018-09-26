@@ -1,40 +1,41 @@
 <form clrForm clrLayout="horizontal"> <!-- vertical or compact -->
-    <clr-input-container>
-        <label>Mentee Name</label>
-        <input clrInput type="text"
-                        required
-                        [(ngModel)]="model.name"
-                        name="example"
-                        #spy/>
-        <clr-control-helper>Helper text that shows while it is pristine and valid</clr-control-helper>
-        <clr-control-error>Error message that appears after focus is lost and control is invalid</clr-control-error>
-    </clr-input-container>
 
-    <clr-input-container>
-        <label>Business</label>
-        <select clrInput  required
-                          [(ngModel)]="model.bu"
-                          name="bu" >
-            <option value="DEV">Development</option>
-            <option value="CISCO">Cisco Data</option>
-            <option value="PM">Project Management</option>
-        </select>
-        <clr-control-helper>Helper text</clr-control-helper>
-        <clr-control-error>This field is required!</clr-control-error>
-    </clr-input-container>
+  <clr-input-container>
+      <label>Mentee Name</label>
+      <input clrInput type="text"
+                      required
+                      [(ngModel)]="model.name"
+                      name="example"
+                      #spyname/>
+      <clr-control-helper>Helper text that shows while it is pristine and valid</clr-control-helper>
+      <clr-control-error>Error message that appears after focus is lost and control is invalid</clr-control-error>
+  </clr-input-container>
 
-    <clr-input-container>
-        <label>Site</label>
-        <select clrInput  required
-                          [(ngModel)]="model.site"
-                          name="site" >
-            <option value="MN">Minnesota</option>
-            <option value="CA">California</option>
-        </select>
-        <clr-control-helper>Helper text</clr-control-helper>
-        <clr-control-error>This field is required!</clr-control-error>
-    </clr-input-container>
+  <clr-input-container>
+      <label>Business Unit</label>
+      <select clrInput  required
+                        [(ngModel)]="model.bu"
+                        name="bu" >
+          <option value="DEV">Development</option>
+          <option value="CISCO">Cisco Data</option>
+          <option value="PM">Project Management</option>
+      </select>
+      <clr-control-helper>Helper text</clr-control-helper>
+      <clr-control-error>This field is required!</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+      <label>Site</label>
+      <select clrInput  required
+                        [(ngModel)]="model.site"
+                        name="site" >
+          <option value="MN">Minnesota</option>
+          <option value="CA">California</option>
+      </select>
+      <clr-control-helper>Helper text</clr-control-helper>
+      <clr-control-error>This field is required!</clr-control-error>
+  </clr-input-container>
 
 </form>
 
-<br>TODO: remove this: {{spy.className}}
+<br> TODO: remove this: {{ spyname.className }}
